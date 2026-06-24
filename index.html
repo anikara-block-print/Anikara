@@ -1,0 +1,508 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1">&lt;title&gt;Anikara — Art of Block Printing&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--navy: #1c2b4a;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--navy-dark: #111c30;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--navy-mid: #2a3f6a;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--navy-light: #d8dff0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--wood: #7a4a22;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--wood-mid: #9e6030;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--wood-light: #f0dfc8;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--wood-pale: #faf4ec;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--ivory: #fdf9f2;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--ivory-dark: #ede4d0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--white: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--text: #141010;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--text-muted: #5a4a38;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--gold-accent: #c8921a;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>* { margin:0; padding:0; box-sizing:border-box; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>body { font-family:'Georgia',serif; background:var(--ivory); color:var(--text); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>nav {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background:var(--navy-dark);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding:0 2rem; display:flex; align-items:center; justify-content:space-between;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position:sticky; top:0; z-index:100; height:66px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-bottom:2px solid var(--wood-mid);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.nav-logo { cursor:pointer; display:flex; flex-direction:column; justify-content:center; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.nav-logo span { color:#fff; font-size:17px; letter-spacing:4px; font-family:sans-serif; font-weight:bold; line-height:1.1; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.nav-logo em { color:var(--wood-light); font-style:normal; font-size:9px; letter-spacing:3px; font-family:sans-serif; opacity:0.85; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.nav-links button { background:none; border:none; color:rgba(255,255,255,0.7); font-size:13px; padding:8px 13px; cursor:pointer; font-family:sans-serif; letter-spacing:0.5px; transition:color 0.2s; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.nav-links button:hover, .nav-links button.active { color:var(--wood-light); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.nav-cta { background:var(--wood-mid); color:#fff; border:none; padding:8px 20px; font-size:13px; font-weight:bold; font-family:sans-serif; cursor:pointer; border-radius:3px; letter-spacing:1px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.nav-cta:hover { background:var(--wood); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.page { display:none; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.page.active { display:block; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* HERO */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background:var(--navy-dark);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>min-height:580px; display:flex; align-items:center; justify-content:center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align:center; padding:4rem 2rem; position:relative; overflow:hidden;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* inner frame echoing the logo border */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero-frame {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position:absolute; inset:20px; border:1px solid rgba(122,74,34,0.25);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>pointer-events:none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero-frame::before {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>content:''; position:absolute; inset:8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border:1px solid rgba(122,74,34,0.12);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* subtle repeating motif */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero-texture {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position:absolute; inset:0; opacity:0.04;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-image:</p>
+<p class="p1"><span class="Apple-converted-space">      </span>repeating-linear-gradient(45deg, var(--wood-light) 0, var(--wood-light) 1px, transparent 0, transparent 22px),</p>
+<p class="p1"><span class="Apple-converted-space">      </span>repeating-linear-gradient(-45deg, var(--wood-light) 0, var(--wood-light) 1px, transparent 0, transparent 22px);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero-content { position:relative; z-index:1; max-width:680px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* logo-style ornament ring */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero-ring {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width:130px; height:130px; border-radius:50%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border:2px solid var(--wood-mid);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display:flex; align-items:center; justify-content:center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin:0 auto 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background:rgba(122,74,34,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero-ring span { font-size:3.4rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero h1 { color:#fff; font-size:3.4rem; letter-spacing:6px; margin-bottom:0.25rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero p.sub { color:var(--wood-light); font-size:10px; letter-spacing:5px; font-family:sans-serif; margin-bottom:1.5rem; opacity:0.9; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero .ornament-line {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display:flex; align-items:center; justify-content:center; gap:12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom:1.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.ornament-line hr { width:60px; border:none; border-top:1px solid rgba(158,96,48,0.5); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.ornament-line span { color:var(--wood-mid); font-size:1rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero p.tagline { color:rgba(240,223,200,0.88); font-size:1.1rem; line-height:1.8; margin-bottom:2.25rem; max-width:460px; margin-left:auto; margin-right:auto; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-primary { background:var(--wood-mid); color:#fff; border:none; padding:13px 30px; font-size:14px; font-family:sans-serif; font-weight:bold; cursor:pointer; border-radius:3px; letter-spacing:1px; margin:0 6px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-primary:hover { background:var(--wood); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-outline { background:none; color:var(--wood-light); border:1.5px solid var(--wood-mid); padding:12px 30px; font-size:14px; font-family:sans-serif; cursor:pointer; border-radius:3px; letter-spacing:1px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-outline:hover { background:rgba(122,74,34,0.12); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>section { padding:4rem 2rem; max-width:900px; margin:0 auto; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.section-title { text-align:center; margin-bottom:2.5rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.section-title h2 { font-size:2rem; color:var(--navy); margin-bottom:0.75rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.section-title .orn { color:var(--wood-mid); font-size:1.1rem; letter-spacing:8px; display:block; margin-bottom:0.5rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.section-title p { color:var(--text-muted); font-family:sans-serif; font-size:15px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.divider { display:flex; align-items:center; justify-content:center; gap:10px; margin:0.75rem auto 0; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.divider hr { width:40px; border:none; border-top:1.5px solid var(--wood-mid); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.divider span { color:var(--wood-mid); font-size:0.7rem; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* SERVICE CARDS */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1.25rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card-grid-5 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card-grid-5 .card-row2 { grid-column:span 1; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card-grid-5-wrap { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card-row2-wrap { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; max-width:66.66%; margin:0; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* event cards equal height */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.event-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.25rem; align-items:stretch; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.event-card { border-radius:4px; overflow:hidden; display:flex; flex-direction:column; height:100%; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card { border-radius:4px; padding:2rem 1.5rem; text-align:center; background:var(--white); border:1px solid var(--ivory-dark); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card-top { width:48px; height:48px; border-radius:50%; margin:0 auto 1rem; display:flex; align-items:center; justify-content:center; font-size:1.5rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.ct-navy { background:var(--navy-light); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.ct-wood { background:var(--wood-light); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.ct-ivory { background:var(--ivory-dark); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.ct-mid { background:rgba(28,43,74,0.08); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card h3 { font-size:1rem; margin-bottom:0.6rem; color:var(--navy); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card p { color:var(--text-muted); font-size:14px; font-family:sans-serif; line-height:1.6; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* accent bar at top */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card::before { content:''; display:block; height:3px; background:var(--wood-mid); margin:-2rem -1.5rem 1.5rem; border-radius:4px 4px 0 0; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* ABOUT */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.about-img {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius:4px; height:380px; overflow:hidden;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background:var(--navy-dark);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border:2px solid var(--navy-mid);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display:flex; flex-direction:column; align-items:center; justify-content:center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color:#fff; text-align:center; padding:2rem; position:relative;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.about-img::after { content:''; position:absolute; inset:10px; border:1px solid rgba(122,74,34,0.25); pointer-events:none; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.about-img .big-icon { font-size:4rem; margin-bottom:1rem; position:relative; z-index:1; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.about-img p { font-family:sans-serif; font-size:13px; opacity:0.8; position:relative; z-index:1; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.about-img .img-label { color:var(--wood-light); font-size:14px; font-style:italic; margin-bottom:0.5rem; position:relative; z-index:1; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.about-text h2 { font-size:1.9rem; color:var(--navy); margin-bottom:1rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.about-text .accent-line { width:50px; height:2px; background:var(--wood-mid); margin-bottom:1.5rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.about-text p { color:var(--text-muted); font-family:sans-serif; line-height:1.8; margin-bottom:1rem; font-size:15px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.values { display:flex; gap:8px; flex-wrap:wrap; margin-top:1.5rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.vb { padding:5px 15px; border-radius:2px; font-size:12px; font-family:sans-serif; font-weight:bold; letter-spacing:0.5px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.vb1 { background:var(--navy-light); color:var(--navy); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.vb2 { background:var(--wood-light); color:var(--wood); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.vb3 { background:var(--ivory-dark); color:var(--text-muted); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.vb4 { background:rgba(28,43,74,0.08); color:var(--navy-mid); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* EVENTS */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.event-card { background:var(--white); border:1px solid var(--ivory-dark); border-radius:4px; overflow:hidden; display:flex; flex-direction:column; height:100%; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.eh { padding:1.5rem; text-align:center; background:var(--navy); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.eh-wood { background:var(--wood); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.eh-mid { background:var(--navy-mid); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.eh .icon { font-size:2.2rem; margin-bottom:0.5rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.eh h3 { color:#fff; font-size:1.05rem; letter-spacing:1px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.eh-tag { display:inline-block; background:rgba(255,255,255,0.15); color:rgba(255,255,255,0.8); font-family:sans-serif; font-size:10px; letter-spacing:2px; padding:2px 10px; border-radius:2px; margin-top:6px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.eb { padding:1.5rem; flex:1; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.eb p { color:var(--text-muted); font-size:14px; font-family:sans-serif; line-height:1.6; margin-bottom:1rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.eb ul { list-style:none; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.eb ul li { font-size:13px; color:var(--text-muted); font-family:sans-serif; padding:4px 0; border-bottom:1px solid var(--ivory-dark); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.eb ul li:last-child { border-bottom:none; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.eb ul li::before { content:"✦ "; color:var(--wood-mid); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.enquire-bar { background:var(--navy); padding:2.5rem; text-align:center; border-radius:4px; margin-top:2rem; border:1px solid var(--navy-mid); position:relative; overflow:hidden; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.enquire-bar::before { content:''; position:absolute; inset:8px; border:1px solid rgba(122,74,34,0.2); pointer-events:none; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.enquire-bar h3 { color:#fff; margin-bottom:0.5rem; font-size:1.3rem; position:relative; z-index:1; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.enquire-bar p { color:var(--wood-light); font-family:sans-serif; font-size:14px; margin-bottom:1.25rem; opacity:0.85; position:relative; z-index:1; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.enquire-bar .btn-primary { position:relative; z-index:1; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* SHOP */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.product-card { background:var(--white); border-radius:4px; overflow:hidden; border:1px solid var(--ivory-dark); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.product-img { height:180px; display:flex; align-items:center; justify-content:center; font-size:3.5rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.pi1 { background:linear-gradient(135deg, var(--wood-light), var(--ivory-dark)); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.pi2 { background:linear-gradient(135deg, var(--navy-light), var(--wood-pale)); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.pi3 { background:linear-gradient(135deg, var(--ivory-dark), var(--wood-light)); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.pi4 { background:linear-gradient(135deg, var(--wood-pale), var(--navy-light)); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.pi5 { background:linear-gradient(135deg, var(--wood-light), var(--navy-light)); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.pi6 { background:linear-gradient(135deg, var(--ivory-dark), var(--wood-pale)); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.product-info { padding:1.25rem; border-top:3px solid var(--wood-mid); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.product-info h3 { color:var(--navy); font-size:1rem; margin-bottom:0.4rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.product-info p { color:var(--text-muted); font-size:13px; font-family:sans-serif; line-height:1.5; margin-bottom:0.75rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.product-price { color:var(--wood-mid); font-size:1.1rem; font-weight:bold; font-family:sans-serif; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.enquire-btn { width:100%; margin-top:0.75rem; padding:10px; background:var(--navy); color:#fff; border:none; border-radius:3px; font-family:sans-serif; font-size:13px; cursor:pointer; letter-spacing:0.5px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.enquire-btn:hover { background:var(--navy-mid); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* GALLERY */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.g1 { background:linear-gradient(135deg, var(--navy-dark), var(--navy-mid)); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.g2 { background:linear-gradient(135deg, var(--wood), var(--wood-mid)); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.g3 { background:linear-gradient(135deg, var(--navy-mid), var(--wood)); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.g4 { background:linear-gradient(135deg, var(--wood-mid), var(--navy)); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.g5 { background:linear-gradient(135deg, var(--navy), var(--wood-dark, #5a3010)); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.g6 { background:linear-gradient(135deg, var(--wood-dark, #5a3010), var(--navy-mid)); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.gallery-item { border-radius:4px; aspect-ratio:1; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff; font-size:2.5rem; cursor:pointer; transition:opacity 0.2s; border:1px solid rgba(255,255,255,0.1); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.gallery-item:hover { opacity:0.85; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.gallery-item .label { font-size:10px; font-family:sans-serif; letter-spacing:2px; color:rgba(255,255,255,0.75); margin-top:0.5rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.gallery-placeholder { background:var(--ivory-dark); border-radius:4px; padding:2rem; text-align:center; margin-bottom:1.5rem; border:1px solid #ddd0b8; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.gallery-placeholder p { color:var(--text-muted); font-family:sans-serif; font-size:14px; line-height:1.7; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* CONTACT */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.contact-info h3 { color:var(--navy); font-size:1.2rem; margin-bottom:1rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.contact-item { display:flex; gap:1rem; margin-bottom:1.25rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.contact-icon { font-size:1.3rem; flex-shrink:0; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.contact-item h4 { color:var(--navy); font-size:14px; margin-bottom:2px; font-family:sans-serif; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.contact-item p { color:var(--text-muted); font-size:13px; font-family:sans-serif; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.social-links { display:flex; gap:10px; flex-wrap:wrap; margin-top:1.5rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.social-btn { padding:9px 16px; border-radius:3px; font-family:sans-serif; font-size:13px; cursor:pointer; border:none; font-weight:bold; letter-spacing:0.5px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.sb-ig { background:var(--wood-light); color:var(--wood); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.sb-fb { background:var(--navy-light); color:var(--navy); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.sb-tt { background:var(--ivory-dark); color:var(--text-muted); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.sb-pi { background:#f0e0e0; color:#8a2020; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.contact-form { background:var(--white); border-radius:4px; padding:2rem; border:1px solid var(--ivory-dark); border-top:3px solid var(--navy); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.contact-form h3 { color:var(--navy); margin-bottom:1.5rem; font-size:1.2rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.form-group { margin-bottom:1rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.form-group label { display:block; font-size:11px; font-family:sans-serif; color:var(--text-muted); margin-bottom:5px; letter-spacing:1px; font-weight:bold; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.form-group input, .form-group select, .form-group textarea { width:100%; padding:10px 12px; border:1px solid var(--ivory-dark); border-radius:3px; font-family:sans-serif; font-size:14px; background:var(--ivory); color:var(--text); outline:none; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.form-group textarea { height:90px; resize:vertical; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.submit-btn { width:100%; padding:13px; background:var(--navy); color:#fff; border:none; border-radius:3px; font-family:sans-serif; font-size:14px; font-weight:bold; cursor:pointer; letter-spacing:1px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.submit-btn:hover { background:var(--navy-mid); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* TESTIMONIALS */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.tcard { background:var(--white); border-radius:4px; padding:1.75rem 1.5rem; border:1px solid var(--ivory-dark); text-align:left; position:relative; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.tcard::before { content:'❝'; position:absolute; top:12px; right:16px; font-size:2.5rem; color:var(--ivory-dark); font-family:Georgia,serif; line-height:1; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.tcard p { font-style:italic; color:#3a2a1a; margin-bottom:1rem; line-height:1.7; font-size:14px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.tcard .author { font-family:sans-serif; font-size:12px; font-weight:bold; color:var(--wood-mid); letter-spacing:0.5px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* BANNER */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.banner-alt { background:var(--navy); padding:3rem 2rem; text-align:center; position:relative; overflow:hidden; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.banner-alt::before { content:''; position:absolute; inset:12px; border:1px solid rgba(122,74,34,0.2); pointer-events:none; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.banner-alt h2 { color:#fff; font-size:1.8rem; margin-bottom:0.5rem; position:relative; z-index:1; letter-spacing:1px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.banner-alt p { color:var(--wood-light); font-family:sans-serif; font-size:15px; margin-bottom:1.5rem; opacity:0.85; position:relative; z-index:1; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.banner-alt .btn-primary { position:relative; z-index:1; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>footer { background:var(--navy-dark); color:rgba(200,190,170,0.6); text-align:center; padding:2rem; font-family:sans-serif; font-size:13px; border-top:2px solid var(--wood-mid); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>footer .footer-logo { color:#fff; font-size:1.1rem; margin-bottom:0.5rem; letter-spacing:4px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>footer a { color:var(--wood-light); text-decoration:none; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.whatsapp-float { position:fixed; bottom:24px; right:24px; z-index:999; background:#25D366; color:white; border:none; width:54px; height:54px; border-radius:50%; font-size:1.6rem; cursor:pointer; display:flex; align-items:center; justify-content:center; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>@media (max-width:640px) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.about-grid, .contact-grid { grid-template-columns:1fr; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.gallery-grid { grid-template-columns:repeat(2,1fr); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero h1 { font-size:2rem; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.nav-links { display:none; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="nav-logo" onclick="showPage('home')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span&gt;ANIKARA&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;em&gt;ART OF BLOCK PRINTING&lt;/em&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="nav-links"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="showPage('home')" id="nav-home" class="active"&gt;Home&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="showPage('about')" id="nav-about"&gt;About&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="showPage('events')" id="nav-events"&gt;Events&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="showPage('shop')" id="nav-shop"&gt;Shop&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="showPage('gallery')" id="nav-gallery"&gt;Gallery&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="showPage('contact')" id="nav-contact"&gt;Contact&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button class="nav-cta" onclick="showPage('events')"&gt;Book an Event&lt;/button&gt;</p>
+<p class="p1">&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- HOME --&gt;</p>
+<p class="p1">&lt;div id="page-home" class="page active"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-frame"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-texture"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero-ring"&gt;&lt;span&gt;🪵&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;ANIKARA&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="sub"&gt;ART OF BLOCK PRINTING&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ornament-line"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;hr&gt;&lt;span&gt;✦&lt;/span&gt;&lt;hr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="tagline"&gt;Ancient craft. Modern moments. Handcrafted Indian block printing for events, gifts, and everyday beauty.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn-primary" onclick="showPage('shop')"&gt;Explore the Shop&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn-outline" onclick="showPage('events')"&gt;Book an Event&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="orn"&gt;· · ✦ · ·&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;What We Do&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="divider"&gt;&lt;hr&gt;&lt;span&gt;✦&lt;/span&gt;&lt;hr&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p style="margin-top:0.75rem"&gt;Bringing the timeless art of Indian block printing to life&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Row 1: 3 cards --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;&lt;div class="card-top ct-navy"&gt;🏢&lt;/div&gt;&lt;h3&gt;Corporate Events&lt;/h3&gt;&lt;p&gt;Team building workshops that inspire creativity, collaboration, and cultural discovery.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;&lt;div class="card-top ct-wood"&gt;💒&lt;/div&gt;&lt;h3&gt;Weddings&lt;/h3&gt;&lt;p&gt;Bespoke printing experiences and handcrafted favours that guests will treasure forever.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;&lt;div class="card-top ct-ivory"&gt;🎗️&lt;/div&gt;&lt;h3&gt;Charity Functions&lt;/h3&gt;&lt;p&gt;Engaging, memorable activities that bring people together for a good cause.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Row 2: 3 cards --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1.25rem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;&lt;div class="card-top ct-mid"&gt;🏫&lt;/div&gt;&lt;h3&gt;School Fairs&lt;/h3&gt;&lt;p&gt;Fun, family-friendly printing activities that children and parents love — perfect for fairs and fundraisers.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;&lt;div class="card-top ct-navy"&gt;🛍️&lt;/div&gt;&lt;h3&gt;Shop&lt;/h3&gt;&lt;p&gt;Handcrafted printed textiles, stationery, and gifts — each one made with love.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;&lt;div class="card-top" style="background:#d4ead4"&gt;♻️&lt;/div&gt;&lt;h3&gt;Recycle &amp; Reprint&lt;/h3&gt;&lt;p&gt;Give your old clothes a new lease of life. Bring us your tired t-shirts, tote bags, or fabric pieces and we'll print on them with beautiful block designs — sustainable, personal, and unique.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="banner-alt"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Ready to create something beautiful?&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Whether it's a workshop, a wedding, or a gift — we'd love to hear from you.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="btn-primary" onclick="showPage('contact')"&gt;Get in Touch&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-title"&gt;&lt;span class="orn"&gt;· · ✦ · ·&lt;/span&gt;&lt;h2&gt;What People Say&lt;/h2&gt;&lt;div class="divider"&gt;&lt;hr&gt;&lt;span&gt;✦&lt;/span&gt;&lt;hr&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card-grid" style="margin-top:1rem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="tcard"&gt;&lt;p&gt;"The workshop was the highlight of our company away-day. Everyone left with something they were genuinely proud of."&lt;/p&gt;&lt;span class="author"&gt;— CORPORATE CLIENT, LONDON&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="tcard"&gt;&lt;p&gt;"Our wedding guests absolutely loved the block printing table. Such a unique and personal touch to our day."&lt;/p&gt;&lt;span class="author"&gt;— WEDDING CLIENT&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="tcard"&gt;&lt;p&gt;"Beautiful products, beautifully made. I ordered a set of printed napkins and they're absolutely stunning."&lt;/p&gt;&lt;span class="author"&gt;— ONLINE CUSTOMER&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ABOUT --&gt;</p>
+<p class="p1">&lt;div id="page-about" class="page"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="about-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="about-img"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;video style="width:100%;height:100%;object-fit:cover;border-radius:4px;display:none" id="about-video" controls&gt;&lt;/video&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="about-placeholder" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;width:100%;position:relative;z-index:1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="big-icon"&gt;🎬&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="img-label" style="margin-bottom:0.75rem"&gt;"Add your photo or video here"&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="margin-bottom:1.25rem"&gt;Upload a photo or short MP4 of you printing on fabric&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label style="background:var(--wood-mid);color:#fff;padding:9px 20px;border-radius:3px;font-family:sans-serif;font-size:13px;cursor:pointer;letter-spacing:0.5px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Upload Photo / Video</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="file" accept="image/*,video/mp4" style="display:none" onchange="handleAboutMedia(event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="about-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;The Story Behind Anikara&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="accent-line"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Anikara was born from a deep love of Indian craft traditions and a desire to share them with the world. Block printing is one of India's oldest and most beautiful textile arts — each stamp a small act of creation, each design carrying centuries of heritage.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;We believe that craft has the power to connect people — to their creativity, to each other, and to something much older and richer than our everyday lives.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Whether you join us at a workshop, commission a bespoke piece, or simply discover us through our shop, you become part of that story.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="values"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="vb vb1"&gt;Handmade&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="vb vb2"&gt;Heritage craft&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="vb vb3"&gt;Sustainable&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="vb vb4"&gt;Community&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section style="background:var(--white);border-radius:4px;border:1px solid var(--ivory-dark);padding:3rem 2rem;margin-bottom:3rem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-title"&gt;&lt;h2&gt;The Art of Block Printing&lt;/h2&gt;&lt;div class="divider"&gt;&lt;hr&gt;&lt;span&gt;✦&lt;/span&gt;&lt;hr&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card-grid" style="margin-top:2rem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;&lt;div class="card-top ct-navy"&gt;🌿&lt;/div&gt;&lt;h3&gt;1. The Block&lt;/h3&gt;&lt;p&gt;Hand-carved wooden blocks depicting flowers, paisleys, and geometric patterns rooted in Rajasthani and Gujarati traditions.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;&lt;div class="card-top ct-wood"&gt;🎨&lt;/div&gt;&lt;h3&gt;2. The Ink&lt;/h3&gt;&lt;p&gt;Natural, fabric-safe dyes — rich indigos, saffron yellows, earthy reds — applied to the block by hand.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;&lt;div class="card-top ct-ivory"&gt;✨&lt;/div&gt;&lt;h3&gt;3. The Print&lt;/h3&gt;&lt;p&gt;Each stamp is placed with care and pressed firmly. No two prints are exactly alike — that's the beauty of the hand.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- EVENTS --&gt;</p>
+<p class="p1">&lt;div id="page-events" class="page"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-title"&gt;&lt;span class="orn"&gt;· · ✦ · ·&lt;/span&gt;&lt;h2&gt;Events &amp; Workshops&lt;/h2&gt;&lt;div class="divider"&gt;&lt;hr&gt;&lt;span&gt;✦&lt;/span&gt;&lt;hr&gt;&lt;/div&gt;&lt;p style="margin-top:0.75rem"&gt;Unforgettable experiences for every occasion&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:stretch"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="event-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="eh"&gt;&lt;div class="icon"&gt;🏢&lt;/div&gt;&lt;h3&gt;Corporate Team Building&lt;/h3&gt;&lt;div class="eh-tag"&gt;WORKSHOPS&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="eb"&gt;&lt;p&gt;A hands-on creative workshop that sparks collaboration and gives every team member something they've made together.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Half-day or full-day formats&lt;/li&gt;&lt;li&gt;Groups from 10 to 100+&lt;/li&gt;&lt;li&gt;All materials provided&lt;/li&gt;&lt;li&gt;Take-home printed keepsakes&lt;/li&gt;&lt;li&gt;Can be themed to your brand&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="event-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="eh eh-wood"&gt;&lt;div class="icon"&gt;💒&lt;/div&gt;&lt;h3&gt;Weddings&lt;/h3&gt;&lt;div class="eh-tag"&gt;BESPOKE&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="eb"&gt;&lt;p&gt;Add a magical, personal craft element to your wedding day. Guests print their own favours or create a collective artwork.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Print-your-own favour stations&lt;/li&gt;&lt;li&gt;Bespoke wedding stationery&lt;/li&gt;&lt;li&gt;South Asian &amp; multicultural themes&lt;/li&gt;&lt;li&gt;Customised with your monogram&lt;/li&gt;&lt;li&gt;Available across the UK&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="event-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="eh eh-mid"&gt;&lt;div class="icon"&gt;🎗️&lt;/div&gt;&lt;h3&gt;Charity Functions&lt;/h3&gt;&lt;div class="eh-tag"&gt;FUNDRAISING&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="eb"&gt;&lt;p&gt;A meaningful activity that brings attendees together and raises funds — printed items can be auctioned or sold on the day.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Raffle &amp; auction-ready items&lt;/li&gt;&lt;li&gt;Live demonstration printing&lt;/li&gt;&lt;li&gt;Community art installations&lt;/li&gt;&lt;li&gt;Flexible pricing for charities&lt;/li&gt;&lt;li&gt;Great for galas &amp; fundraisers&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="enquire-bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3&gt;Ready to book your event?&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Tell us about your event and we'll get back to you within 24 hours.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn-primary" onclick="showPage('contact')"&gt;Make an Enquiry&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- SHOP --&gt;</p>
+<p class="p1">&lt;div id="page-shop" class="page"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-title"&gt;&lt;span class="orn"&gt;· · ✦ · ·&lt;/span&gt;&lt;h2&gt;The Shop&lt;/h2&gt;&lt;div class="divider"&gt;&lt;hr&gt;&lt;span&gt;✦&lt;/span&gt;&lt;hr&gt;&lt;/div&gt;&lt;p style="margin-top:0.75rem"&gt;Handcrafted pieces you'll love to give and keep&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="product-card"&gt;&lt;div class="product-img pi1"&gt;🧣&lt;/div&gt;&lt;div class="product-info"&gt;&lt;h3&gt;Block-Printed Scarf&lt;/h3&gt;&lt;p&gt;Hand-printed on soft cotton with traditional floral motifs. Each one uniquely yours.&lt;/p&gt;&lt;div class="product-price"&gt;From £35&lt;/div&gt;&lt;button class="enquire-btn" onclick="showPage('contact')"&gt;Enquire to Order&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="product-card"&gt;&lt;div class="product-img pi2"&gt;🛍️&lt;/div&gt;&lt;div class="product-info"&gt;&lt;h3&gt;Printed Tote Bag&lt;/h3&gt;&lt;p&gt;Sturdy cotton tote with bold block-print design. Perfect for everyday use or gifting.&lt;/p&gt;&lt;div class="product-price"&gt;From £18&lt;/div&gt;&lt;button class="enquire-btn" onclick="showPage('contact')"&gt;Enquire to Order&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="product-card"&gt;&lt;div class="product-img pi3"&gt;🃏&lt;/div&gt;&lt;div class="product-info"&gt;&lt;h3&gt;Greeting Cards&lt;/h3&gt;&lt;p&gt;Hand-printed cards for every occasion. Beautiful, tactile, and completely unique.&lt;/p&gt;&lt;div class="product-price"&gt;From £4.50&lt;/div&gt;&lt;button class="enquire-btn" onclick="showPage('contact')"&gt;Enquire to Order&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="product-card"&gt;&lt;div class="product-img pi4"&gt;🍽️&lt;/div&gt;&lt;div class="product-info"&gt;&lt;h3&gt;Table Napkins (Set of 4)&lt;/h3&gt;&lt;p&gt;Beautifully printed linen napkins. A simple way to bring craft into your home.&lt;/p&gt;&lt;div class="product-price"&gt;From £28&lt;/div&gt;&lt;button class="enquire-btn" onclick="showPage('contact')"&gt;Enquire to Order&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="product-card"&gt;&lt;div class="product-img pi5"&gt;📦&lt;/div&gt;&lt;div class="product-info"&gt;&lt;h3&gt;Gift Set&lt;/h3&gt;&lt;p&gt;A curated box of printed goodies — perfect for birthdays, festivals, and special moments.&lt;/p&gt;&lt;div class="product-price"&gt;From £45&lt;/div&gt;&lt;button class="enquire-btn" onclick="showPage('contact')"&gt;Enquire to Order&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="product-card"&gt;&lt;div class="product-img pi6"&gt;🎨&lt;/div&gt;&lt;div class="product-info"&gt;&lt;h3&gt;DIY Printing Kit&lt;/h3&gt;&lt;p&gt;Everything you need to try block printing at home. A wonderful gift for all ages.&lt;/p&gt;&lt;div class="product-price"&gt;From £22&lt;/div&gt;&lt;button class="enquire-btn" onclick="showPage('contact')"&gt;Enquire to Order&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p style="text-align:center;margin-top:2rem;color:var(--text-muted);font-family:sans-serif;font-size:14px"&gt;All items are handmade to order. For custom commissions, &lt;a style="color:var(--wood-mid);text-decoration:none;cursor:pointer" onclick="showPage('contact')"&gt;get in touch&lt;/a&gt;.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- GALLERY --&gt;</p>
+<p class="p1">&lt;div id="page-gallery" class="page"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-title"&gt;&lt;span class="orn"&gt;· · ✦ · ·&lt;/span&gt;&lt;h2&gt;Gallery&lt;/h2&gt;&lt;div class="divider"&gt;&lt;hr&gt;&lt;span&gt;✦&lt;/span&gt;&lt;hr&gt;&lt;/div&gt;&lt;p style="margin-top:0.75rem"&gt;A glimpse into the world of Anikara&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="gallery-placeholder"&gt;&lt;p&gt;📸 &lt;strong&gt;Add your photos here.&lt;/strong&gt; Replace these with images of your work, workshops, and products. Aim for a mix of close-up block prints, people enjoying workshops, finished products, and event moments.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="gallery-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="gallery-item g1"&gt;&lt;span&gt;🪵&lt;/span&gt;&lt;span class="label"&gt;THE BLOCKS&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="gallery-item g2"&gt;&lt;span&gt;🎨&lt;/span&gt;&lt;span class="label"&gt;THE INK&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="gallery-item g3"&gt;&lt;span&gt;👐&lt;/span&gt;&lt;span class="label"&gt;THE CRAFT&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="gallery-item g4"&gt;&lt;span&gt;🧣&lt;/span&gt;&lt;span class="label"&gt;SCARVES&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="gallery-item g5"&gt;&lt;span&gt;🏢&lt;/span&gt;&lt;span class="label"&gt;CORPORATE&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="gallery-item g6"&gt;&lt;span&gt;💒&lt;/span&gt;&lt;span class="label"&gt;WEDDINGS&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- CONTACT --&gt;</p>
+<p class="p1">&lt;div id="page-contact" class="page"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section-title"&gt;&lt;span class="orn"&gt;· · ✦ · ·&lt;/span&gt;&lt;h2&gt;Get in Touch&lt;/h2&gt;&lt;div class="divider"&gt;&lt;hr&gt;&lt;span&gt;✦&lt;/span&gt;&lt;hr&gt;&lt;/div&gt;&lt;p style="margin-top:0.75rem"&gt;We'd love to hear from you&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="contact-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="contact-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Contact Anikara&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="contact-item"&gt;&lt;div class="contact-icon"&gt;📧&lt;/div&gt;&lt;div&gt;&lt;h4&gt;Email&lt;/h4&gt;&lt;p&gt;hello@anikara.co.uk&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="contact-item"&gt;&lt;div class="contact-icon"&gt;📱&lt;/div&gt;&lt;div&gt;&lt;h4&gt;WhatsApp&lt;/h4&gt;&lt;p&gt;Message us for the quickest response&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="contact-item"&gt;&lt;div class="contact-icon"&gt;📍&lt;/div&gt;&lt;div&gt;&lt;h4&gt;Location&lt;/h4&gt;&lt;p&gt;Based in London, UK · Available nationwide&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3 style="margin-top:2rem;margin-bottom:1rem;font-size:1rem"&gt;Follow Us&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="social-links"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="social-btn sb-ig"&gt;📸 Instagram&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="social-btn sb-fb"&gt;📘 Facebook&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="social-btn sb-tt"&gt;🎵 TikTok&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="social-btn sb-pi"&gt;📌 Pinterest&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="contact-form"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Send a Message&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="form-group"&gt;&lt;label&gt;YOUR NAME *&lt;/label&gt;&lt;input type="text" id="f-name" placeholder="e.g. Priya Sharma" required&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="form-group"&gt;&lt;label&gt;EMAIL ADDRESS *&lt;/label&gt;&lt;input type="email" id="f-email" placeholder="your@email.com" required&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="form-group"&gt;&lt;label&gt;TELEPHONE NUMBER *&lt;/label&gt;&lt;input type="tel" id="f-tel" placeholder="e.g. 07700 900000" required&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="form-group"&gt;&lt;label&gt;ENQUIRY TYPE *&lt;/label&gt;&lt;select id="f-type" required&gt;&lt;option value=""&gt;Select an option...&lt;/option&gt;&lt;option&gt;Corporate event / team building&lt;/option&gt;&lt;option&gt;Wedding&lt;/option&gt;&lt;option&gt;Charity function&lt;/option&gt;&lt;option&gt;School fair&lt;/option&gt;&lt;option&gt;Shop / product order&lt;/option&gt;&lt;option&gt;Custom commission&lt;/option&gt;&lt;option&gt;General enquiry&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="form-group"&gt;&lt;label&gt;MESSAGE *&lt;/label&gt;&lt;textarea id="f-msg" placeholder="Tell us about your event, what you're looking for, and any dates you have in mind..." required&gt;&lt;/textarea&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="form-error" style="color:#c00;font-family:sans-serif;font-size:13px;margin-bottom:0.75rem;display:none"&gt;Please fill in all required fields.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="submit-btn" onclick="submitForm()"&gt;SEND MESSAGE ✦&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="footer-logo"&gt;ANIKARA&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p style="letter-spacing:2px;font-size:11px;margin-bottom:0.75rem"&gt;ART OF BLOCK PRINTING&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p style="margin-bottom:0.5rem"&gt;Handcrafted in London · Available across the UK&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;© 2026 Anikara · &lt;a href="#"&gt;Instagram @anikara.co&lt;/a&gt; · &lt;a href="#"&gt;hello@anikara.co.uk&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1">&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;button class="whatsapp-float" title="Chat on WhatsApp"&gt;💬&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function submitForm() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const name = document.getElementById('f-name').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const email = document.getElementById('f-email').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const tel = document.getElementById('f-tel').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const type = document.getElementById('f-type').value;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const msg = document.getElementById('f-msg').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const err = document.getElementById('form-error');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (!name || !email || !tel || !type || !msg) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>err.style.display = 'block'; return;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>err.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>alert('Thank you for your message! We\'ll be in touch within 24 hours.');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function handleAboutMedia(e) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const file = e.target.files[0]; if (!file) return;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const url = URL.createObjectURL(file);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const placeholder = document.getElementById('about-placeholder');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const video = document.getElementById('about-video');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (file.type.startsWith('video/')) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>video.src = url; video.style.display = 'block'; placeholder.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const img = document.createElement('img');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>img.src = url; img.style.cssText = 'width:100%;height:100%;object-fit:cover;border-radius:4px;';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>placeholder.parentElement.appendChild(img); placeholder.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function showPage(id) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.querySelectorAll('.page').forEach(p =&gt; p.classList.remove('active'));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.querySelectorAll('.nav-links button').forEach(b =&gt; b.classList.remove('active'));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('page-' + id).classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const nb = document.getElementById('nav-' + id);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (nb) nb.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>window.scrollTo(0, 0);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
