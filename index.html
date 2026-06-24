@@ -437,6 +437,7 @@
         <div class="form-group"><label>ENQUIRY TYPE *</label><select id="f-type" required><option value="">Select an option...</option><option>Corporate event / team building</option><option>Wedding</option><option>Charity function</option><option>School fair</option><option>Shop / product order</option><option>Custom commission</option><option>General enquiry</option></select></div>
         <div class="form-group"><label>MESSAGE *</label><textarea id="f-msg" placeholder="Tell us about your event, what you're looking for, and any dates you have in mind..." required></textarea></div>
         <div id="form-error" style="color:#c00;font-family:sans-serif;font-size:13px;margin-bottom:0.75rem;display:none">Please fill in all required fields.</div>
+        <div id="form-success" style="color:green;font-family:sans-serif;font-size:13px;margin-bottom:0.75rem;display:none">Thank you! Your message has been sent — we'll be in touch within 24 hours.</div>
         <button class="submit-btn" onclick="submitForm()">SEND MESSAGE ✦</button>
       </div>
     </div>
@@ -453,18 +454,40 @@
 <button class="whatsapp-float" title="Chat on WhatsApp">💬</button>
 
 <script>
-  function submitForm() {
+  async function submitForm() {
     const name = document.getElementById('f-name').value.trim();
     const email = document.getElementById('f-email').value.trim();
     const tel = document.getElementById('f-tel').value.trim();
     const type = document.getElementById('f-type').value;
     const msg = document.getElementById('f-msg').value.trim();
     const err = document.getElementById('form-error');
+    const success = document.getElementById('form-success');
     if (!name || !email || !tel || !type || !msg) {
       err.style.display = 'block'; return;
     }
     err.style.display = 'none';
-    alert('Thank you for your message! We\'ll be in touch within 24 hours.');
+    const data = { name, email, telephone: tel, enquiryType: type, message: msg };
+    try {
+      const res = await fetch('https://formspree.io/f/mzdldkgy', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+        success.style.display = 'block';
+        document.getElementById('f-name').value = '';
+        document.getElementById('f-email').value = '';
+        document.getElementById('f-tel').value = '';
+        document.getElementById('f-type').value = '';
+        document.getElementById('f-msg').value = '';
+      } else {
+        err.textContent = 'Something went wrong. Please try again or email us directly.';
+        err.style.display = 'block';
+      }
+    } catch(e) {
+      err.textContent = 'Something went wrong. Please try again or email us directly.';
+      err.style.display = 'block';
+    }
   }
   function handleAboutMedia(e) {
     const file = e.target.files[0]; if (!file) return;
