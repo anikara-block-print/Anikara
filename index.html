@@ -70,6 +70,7 @@
     background:rgba(122,74,34,0.08);
   }
   .hero-ring span { font-size:3.4rem; }
+  .hero-ring img { width:100%; height:100%; object-fit:cover; border-radius:50%; }
   .hero h1 { color:#fff; font-size:3.4rem; letter-spacing:6px; margin-bottom:0.25rem; }
   .hero p.sub { color:var(--wood-light); font-size:10px; letter-spacing:5px; font-family:sans-serif; margin-bottom:1.5rem; opacity:0.9; }
   .hero .ornament-line {
@@ -133,7 +134,7 @@
   .vb4 { background:rgba(28,43,74,0.08); color:var(--navy-mid); }
 
   .event-card { background:var(--white); border:1px solid var(--ivory-dark); border-radius:4px; overflow:hidden; display:flex; flex-direction:column; height:100%; }
-  .eh { padding:1.5rem; text-align:center; background:var(--navy); }
+  .eh { padding:1.5rem; text-align:center; background:var(--navy); min-height:148px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
   .eh-wood { background:var(--wood); }
   .eh-mid { background:var(--navy-mid); }
   .eh .icon { font-size:2.2rem; margin-bottom:0.5rem; }
@@ -266,7 +267,6 @@
     <button onclick="showPage('home')" id="nav-home" class="active">Home</button>
     <button onclick="showPage('about')" id="nav-about">About</button>
     <button onclick="showPage('events')" id="nav-events">Events</button>
-    <button onclick="showPage('shop')" id="nav-shop">Shop</button>
     <button onclick="showPage('gallery')" id="nav-gallery">Gallery</button>
     <button onclick="showPage('contact')" id="nav-contact">Contact</button>
   </div>
@@ -279,15 +279,15 @@
     <div class="hero-frame"></div>
     <div class="hero-texture"></div>
     <div class="hero-content">
-      <div class="hero-ring"><span>🪵</span></div>
+      <div class="hero-ring"><img src="logo.jpg" alt="Anikara logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span style="display:none">🪵</span></div>
       <h1>ANIKARA</h1>
       <p class="sub">ART OF BLOCK PRINTING</p>
       <div class="ornament-line">
         <hr><span>✦</span><hr>
       </div>
       <p class="tagline">Ancient craft. Modern moments. Handcrafted Indian block printing for events, gifts, and everyday beauty.</p>
-      <button class="btn-primary" onclick="showPage('shop')">Explore the Shop</button>
-      <button class="btn-outline" onclick="showPage('events')">Book an Event</button>
+      <button class="btn-primary" onclick="showPage('events')">Book an Event</button>
+      <button class="btn-outline" onclick="showPage('contact')">Get in Touch</button>
     </div>
   </div>
 
@@ -300,12 +300,11 @@
     </div>
     <div class="card-grid">
       <div class="card"><div class="card-top ct-navy">🏢</div><h3>Corporate Events</h3><p>Team building workshops that inspire creativity, collaboration, and cultural discovery.</p></div>
-      <div class="card"><div class="card-top ct-wood">💒</div><h3>Weddings</h3><p>Bespoke printing experiences and handcrafted favours that guests will treasure forever.</p></div>
+      <div class="card"><div class="card-top ct-wood">💒</div><h3>Parties & Weddings</h3><p>Bespoke printing experiences and handcrafted favours that guests will treasure forever.</p></div>
       <div class="card"><div class="card-top ct-ivory">🎗️</div><h3>Charity Functions</h3><p>Engaging, memorable activities that bring people together for a good cause.</p></div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1.25rem">
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:1.25rem;max-width:66.66%;margin-left:auto;margin-right:auto">
       <div class="card"><div class="card-top ct-mid">🏫</div><h3>School Fairs</h3><p>Fun, family-friendly printing activities that children and parents love — perfect for fairs and fundraisers.</p></div>
-      <div class="card"><div class="card-top ct-navy">🛍️</div><h3>Shop</h3><p>Handcrafted printed textiles, stationery, and gifts — each one made with love.</p></div>
       <div class="card"><div class="card-top" style="background:#d4ead4">♻️</div><h3>Recycle & Reprint</h3><p>Give your old clothes a new lease of life. Bring us your tired t-shirts, tote bags, or fabric pieces and we'll print on them with beautiful block designs — sustainable, personal, and unique.</p></div>
     </div>
   </section>
@@ -344,7 +343,7 @@
         <div class="accent-line"></div>
         <p>Anikara was born from a deep love of Indian craft traditions and a desire to share them with the world. Block printing is one of India's oldest and most beautiful textile arts — each stamp a small act of creation, each design carrying centuries of heritage.</p>
         <p>We believe that craft has the power to connect people — to their creativity, to each other, and to something much older and richer than our everyday lives.</p>
-        <p>Whether you join us at a workshop, commission a bespoke piece, or simply discover us through our shop, you become part of that story.</p>
+        <p>Whether you join us at a workshop, commission a bespoke piece, or simply get in touch to find out more, you become part of that story.</p>
         <div class="values">
           <span class="vb vb1">Handmade</span>
           <span class="vb vb2">Heritage craft</span>
@@ -374,11 +373,11 @@
         <div class="eb"><p>A hands-on creative workshop that sparks collaboration and gives every team member something they've made together.</p><ul><li>Half-day or full-day formats</li><li>Groups from 10 to 100+</li><li>All materials provided</li><li>Take-home printed keepsakes</li><li>Can be themed to your brand</li></ul></div>
       </div>
       <div class="event-card">
-        <div class="eh eh-wood"><div class="icon">💒</div><h3>Weddings</h3><div class="eh-tag">BESPOKE</div></div>
-        <div class="eb"><p>Add a magical, personal craft element to your wedding day. Guests print their own favours or create a collective artwork.</p><ul><li>Print-your-own favour stations</li><li>Bespoke wedding stationery</li><li>South Asian & multicultural themes</li><li>Customised with your monogram</li><li>Available across the UK</li></ul></div>
+        <div class="eh eh-wood"><div class="icon">💒</div><h3>Parties & Weddings</h3><div class="eh-tag">BESPOKE</div></div>
+        <div class="eb"><p>Add a magical, personal craft element to your celebration. Guests print their own favours or create a collective artwork.</p><ul><li>Print-your-own favour stations</li><li>Bespoke wedding stationery</li><li>South Asian & multicultural themes</li><li>Customised with your monogram</li><li>Available across the UK</li></ul></div>
       </div>
       <div class="event-card">
-        <div class="eh eh-mid"><div class="icon">🎗️</div><h3>Charity Functions</h3><div class="eh-tag">FUNDRAISING</div></div>
+        <div class="eh eh-mid"><div class="icon">🎗️</div><h3>Charity<br>Functions</h3><div class="eh-tag">FUNDRAISING</div></div>
         <div class="eb"><p>A meaningful activity that brings attendees together and raises funds — printed items can be auctioned or sold on the day.</p><ul><li>Raffle & auction-ready items</li><li>Live demonstration printing</li><li>Community art installations</li><li>Flexible pricing for charities</li><li>Great for galas & fundraisers</li></ul></div>
       </div>
     </div>
@@ -387,22 +386,6 @@
       <p>Tell us about your event and we'll get back to you within 24 hours.</p>
       <button class="btn-primary" onclick="showPage('contact')">Make an Enquiry</button>
     </div>
-  </section>
-</div>
-
-<!-- SHOP -->
-<div id="page-shop" class="page">
-  <section>
-    <div class="section-title"><span class="orn">· · ✦ · ·</span><h2>The Shop</h2><div class="divider"><hr><span>✦</span><hr></div><p style="margin-top:0.75rem">Handcrafted pieces you'll love to give and keep</p></div>
-    <div class="card-grid">
-      <div class="product-card"><div class="product-img pi1"><img src="shop-scarf.jpg" alt="Block-printed scarf" onerror="this.style.display='none'">🧣</div><div class="product-info"><h3>Block-Printed Scarf</h3><p>Hand-printed on soft cotton with traditional floral motifs. Each one uniquely yours.</p><div class="product-price">From £35</div><button class="enquire-btn" onclick="showPage('contact')">Enquire to Order</button></div></div>
-      <div class="product-card"><div class="product-img pi2"><img src="shop-tote.jpg" alt="Printed tote bag" onerror="this.style.display='none'">🛍️</div><div class="product-info"><h3>Printed Tote Bag</h3><p>Sturdy cotton tote with bold block-print design. Perfect for everyday use or gifting.</p><div class="product-price">From £18</div><button class="enquire-btn" onclick="showPage('contact')">Enquire to Order</button></div></div>
-      <div class="product-card"><div class="product-img pi3"><img src="shop-cards.jpg" alt="Block-printed greeting cards" onerror="this.style.display='none'">🃏</div><div class="product-info"><h3>Greeting Cards</h3><p>Hand-printed cards for every occasion. Beautiful, tactile, and completely unique.</p><div class="product-price">From £4.50</div><button class="enquire-btn" onclick="showPage('contact')">Enquire to Order</button></div></div>
-      <div class="product-card"><div class="product-img pi4"><img src="shop-napkins.jpg" alt="Block-printed table napkins" onerror="this.style.display='none'">🍽️</div><div class="product-info"><h3>Table Napkins (Set of 4)</h3><p>Beautifully printed linen napkins. A simple way to bring craft into your home.</p><div class="product-price">From £28</div><button class="enquire-btn" onclick="showPage('contact')">Enquire to Order</button></div></div>
-      <div class="product-card"><div class="product-img pi5"><img src="shop-giftset.jpg" alt="Block-printed gift set" onerror="this.style.display='none'">📦</div><div class="product-info"><h3>Gift Set</h3><p>A curated box of printed goodies — perfect for birthdays, festivals, and special moments.</p><div class="product-price">From £45</div><button class="enquire-btn" onclick="showPage('contact')">Enquire to Order</button></div></div>
-      <div class="product-card"><div class="product-img pi6"><img src="shop-diykit.jpg" alt="DIY block printing kit" onerror="this.style.display='none'">🎨</div><div class="product-info"><h3>DIY Printing Kit</h3><p>Everything you need to try block printing at home. A wonderful gift for all ages.</p><div class="product-price">From £22</div><button class="enquire-btn" onclick="showPage('contact')">Enquire to Order</button></div></div>
-    </div>
-    <p style="text-align:center;margin-top:2rem;color:var(--text-muted);font-family:sans-serif;font-size:14px">All items are handmade to order. For custom commissions, <a style="color:var(--wood-mid);text-decoration:none;cursor:pointer" onclick="showPage('contact')">get in touch</a>.</p>
   </section>
 </div>
 
@@ -442,7 +425,7 @@
         <div class="form-group"><label>YOUR NAME *</label><input type="text" id="f-name" placeholder="e.g. Priya Sharma" required></div>
         <div class="form-group"><label>EMAIL ADDRESS *</label><input type="email" id="f-email" placeholder="your@email.com" required></div>
         <div class="form-group"><label>TELEPHONE NUMBER *</label><input type="tel" id="f-tel" placeholder="e.g. 07700 900000" required></div>
-        <div class="form-group"><label>ENQUIRY TYPE *</label><select id="f-type" required><option value="">Select an option...</option><option>Corporate event / team building</option><option>Wedding</option><option>Charity function</option><option>School fair</option><option>Shop / product order</option><option>Custom commission</option><option>General enquiry</option></select></div>
+        <div class="form-group"><label>ENQUIRY TYPE *</label><select id="f-type" required><option value="">Select an option...</option><option>Corporate event / team building</option><option>Party / wedding</option><option>Charity function</option><option>School fair</option><option>Product order / commission</option><option>General enquiry</option></select></div>
         <div class="form-group"><label>MESSAGE *</label><textarea id="f-msg" placeholder="Tell us about your event, what you're looking for, and any dates you have in mind..." required></textarea></div>
         <div id="form-error" style="color:#c00;font-family:sans-serif;font-size:13px;margin-bottom:0.75rem;display:none">Please fill in all required fields.</div>
         <div id="form-success" style="color:#2a6b2a;font-family:sans-serif;font-size:13px;margin-bottom:0.75rem;display:none">Thank you — your message has been sent! We'll be in touch within 24 hours.</div>
