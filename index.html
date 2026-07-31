@@ -47,7 +47,6 @@
     min-height:580px; display:flex; align-items:center; justify-content:center;
     text-align:center; padding:4rem 2rem; position:relative; overflow:hidden;
   }
-  /* inner frame echoing the logo border */
   .hero-frame {
     position:absolute; inset:20px; border:1px solid rgba(122,74,34,0.25);
     pointer-events:none;
@@ -56,7 +55,6 @@
     content:''; position:absolute; inset:8px;
     border:1px solid rgba(122,74,34,0.12);
   }
-  /* subtle repeating motif */
   .hero-texture {
     position:absolute; inset:0; opacity:0.04;
     background-image:
@@ -64,7 +62,6 @@
       repeating-linear-gradient(-45deg, var(--wood-light) 0, var(--wood-light) 1px, transparent 0, transparent 22px);
   }
   .hero-content { position:relative; z-index:1; max-width:680px; }
-  /* logo-style ornament ring */
   .hero-ring {
     width:130px; height:130px; border-radius:50%;
     border:2px solid var(--wood-mid);
@@ -96,13 +93,11 @@
   .divider hr { width:40px; border:none; border-top:1.5px solid var(--wood-mid); }
   .divider span { color:var(--wood-mid); font-size:0.7rem; }
 
-  /* SERVICE CARDS */
   .card-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1.25rem; }
   .card-grid-5 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
   .card-grid-5 .card-row2 { grid-column:span 1; }
   .card-grid-5-wrap { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
   .card-row2-wrap { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; max-width:66.66%; margin:0; }
-  /* event cards equal height */
   .event-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.25rem; align-items:stretch; }
   .event-card { border-radius:4px; overflow:hidden; display:flex; flex-direction:column; height:100%; }
   .card { border-radius:4px; padding:2rem 1.5rem; text-align:center; background:var(--white); border:1px solid var(--ivory-dark); }
@@ -113,10 +108,8 @@
   .ct-mid { background:rgba(28,43,74,0.08); }
   .card h3 { font-size:1rem; margin-bottom:0.6rem; color:var(--navy); }
   .card p { color:var(--text-muted); font-size:14px; font-family:sans-serif; line-height:1.6; }
-  /* accent bar at top */
   .card::before { content:''; display:block; height:3px; background:var(--wood-mid); margin:-2rem -1.5rem 1.5rem; border-radius:4px 4px 0 0; }
 
-  /* ABOUT */
   .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
   .about-img {
     border-radius:4px; height:380px; overflow:hidden;
@@ -139,7 +132,6 @@
   .vb3 { background:var(--ivory-dark); color:var(--text-muted); }
   .vb4 { background:rgba(28,43,74,0.08); color:var(--navy-mid); }
 
-  /* EVENTS */
   .event-card { background:var(--white); border:1px solid var(--ivory-dark); border-radius:4px; overflow:hidden; display:flex; flex-direction:column; height:100%; }
   .eh { padding:1.5rem; text-align:center; background:var(--navy); }
   .eh-wood { background:var(--wood); }
@@ -160,7 +152,6 @@
   .enquire-bar p { color:var(--wood-light); font-family:sans-serif; font-size:14px; margin-bottom:1.25rem; opacity:0.85; position:relative; z-index:1; }
   .enquire-bar .btn-primary { position:relative; z-index:1; }
 
-  /* SHOP */
   .product-card { background:var(--white); border-radius:4px; overflow:hidden; border:1px solid var(--ivory-dark); }
   .product-img { position:relative; aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; font-size:3.5rem; overflow:hidden; border-bottom:1px solid var(--ivory-dark); }
   .product-img img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; transition:transform 0.35s ease; }
@@ -178,7 +169,6 @@
   .enquire-btn { width:100%; margin-top:0.75rem; padding:10px; background:var(--navy); color:#fff; border:none; border-radius:3px; font-family:sans-serif; font-size:13px; cursor:pointer; letter-spacing:0.5px; }
   .enquire-btn:hover { background:var(--navy-mid); }
 
-  /* GALLERY */
   .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
   .g1 { background:linear-gradient(135deg, var(--navy-dark), var(--navy-mid)); }
   .g2 { background:linear-gradient(135deg, var(--wood), var(--wood-mid)); }
@@ -196,7 +186,6 @@
   .gallery-placeholder { background:var(--ivory-dark); border-radius:4px; padding:2rem; text-align:center; margin-bottom:1.5rem; border:1px solid #ddd0b8; }
   .gallery-placeholder p { color:var(--text-muted); font-family:sans-serif; font-size:14px; line-height:1.7; }
 
-  /* CONTACT */
   .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
   .contact-info h3 { color:var(--navy); font-size:1.2rem; margin-bottom:1rem; }
   .contact-item { display:flex; gap:1rem; margin-bottom:1.25rem; }
@@ -218,13 +207,11 @@
   .submit-btn { width:100%; padding:13px; background:var(--navy); color:#fff; border:none; border-radius:3px; font-family:sans-serif; font-size:14px; font-weight:bold; cursor:pointer; letter-spacing:1px; }
   .submit-btn:hover { background:var(--navy-mid); }
 
-  /* TESTIMONIALS */
   .tcard { background:var(--white); border-radius:4px; padding:1.75rem 1.5rem; border:1px solid var(--ivory-dark); text-align:left; position:relative; }
   .tcard::before { content:'❝'; position:absolute; top:12px; right:16px; font-size:2.5rem; color:var(--ivory-dark); font-family:Georgia,serif; line-height:1; }
   .tcard p { font-style:italic; color:#3a2a1a; margin-bottom:1rem; line-height:1.7; font-size:14px; }
   .tcard .author { font-family:sans-serif; font-size:12px; font-weight:bold; color:var(--wood-mid); letter-spacing:0.5px; }
 
-  /* BANNER */
   .banner-alt { background:var(--navy); padding:3rem 2rem; text-align:center; position:relative; overflow:hidden; }
   .banner-alt::before { content:''; position:absolute; inset:12px; border:1px solid rgba(122,74,34,0.2); pointer-events:none; }
   .banner-alt h2 { color:#fff; font-size:1.8rem; margin-bottom:0.5rem; position:relative; z-index:1; letter-spacing:1px; }
@@ -288,13 +275,11 @@
       <div class="divider"><hr><span>✦</span><hr></div>
       <p style="margin-top:0.75rem">Bringing the timeless art of Indian block printing to life</p>
     </div>
-    <!-- Row 1: 3 cards -->
     <div class="card-grid">
       <div class="card"><div class="card-top ct-navy">🏢</div><h3>Corporate Events</h3><p>Team building workshops that inspire creativity, collaboration, and cultural discovery.</p></div>
       <div class="card"><div class="card-top ct-wood">💒</div><h3>Weddings</h3><p>Bespoke printing experiences and handcrafted favours that guests will treasure forever.</p></div>
       <div class="card"><div class="card-top ct-ivory">🎗️</div><h3>Charity Functions</h3><p>Engaging, memorable activities that bring people together for a good cause.</p></div>
     </div>
-    <!-- Row 2: 3 cards -->
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1.25rem">
       <div class="card"><div class="card-top ct-mid">🏫</div><h3>School Fairs</h3><p>Fun, family-friendly printing activities that children and parents love — perfect for fairs and fundraisers.</p></div>
       <div class="card"><div class="card-top ct-navy">🛍️</div><h3>Shop</h3><p>Handcrafted printed textiles, stationery, and gifts — each one made with love.</p></div>
@@ -387,12 +372,12 @@
   <section>
     <div class="section-title"><span class="orn">· · ✦ · ·</span><h2>The Shop</h2><div class="divider"><hr><span>✦</span><hr></div><p style="margin-top:0.75rem">Handcrafted pieces you'll love to give and keep</p></div>
     <div class="card-grid">
-      <div class="product-card"><div class="product-img pi1"><img src="shop-scarf.jpg" alt="Block-printed scarf" onerror="this.style.display='none'">🧣</div><div class="product-info"><h3>Block-Printed Scarf</h3><p>Hand-printed on soft cotton with traditional floral motifs. Each one uniquely yours.</p><div class="product-price">From £35</div><button class="enquire-btn" onclick="showPage('contact')">Enquire to Order</button></div></div>
-      <div class="product-card"><div class="product-img pi2"><img src="shop-tote.jpg" alt="Printed tote bag" onerror="this.style.display='none'">🛍️</div><div class="product-info"><h3>Printed Tote Bag</h3><p>Sturdy cotton tote with bold block-print design. Perfect for everyday use or gifting.</p><div class="product-price">From £18</div><button class="enquire-btn" onclick="showPage('contact')">Enquire to Order</button></div></div>
-      <div class="product-card"><div class="product-img pi3"><img src="shop-cards.jpg" alt="Block-printed greeting cards" onerror="this.style.display='none'">🃏</div><div class="product-info"><h3>Greeting Cards</h3><p>Hand-printed cards for every occasion. Beautiful, tactile, and completely unique.</p><div class="product-price">From £4.50</div><button class="enquire-btn" onclick="showPage('contact')">Enquire to Order</button></div></div>
-      <div class="product-card"><div class="product-img pi4"><img src="shop-napkins.jpg" alt="Block-printed table napkins" onerror="this.style.display='none'">🍽️</div><div class="product-info"><h3>Table Napkins (Set of 4)</h3><p>Beautifully printed linen napkins. A simple way to bring craft into your home.</p><div class="product-price">From £28</div><button class="enquire-btn" onclick="showPage('contact')">Enquire to Order</button></div></div>
-      <div class="product-card"><div class="product-img pi5"><img src="shop-giftset.jpg" alt="Block-printed gift set" onerror="this.style.display='none'">📦</div><div class="product-info"><h3>Gift Set</h3><p>A curated box of printed goodies — perfect for birthdays, festivals, and special moments.</p><div class="product-price">From £45</div><button class="enquire-btn" onclick="showPage('contact')">Enquire to Order</button></div></div>
-      <div class="product-card"><div class="product-img pi6"><img src="shop-diykit.jpg" alt="DIY block printing kit" onerror="this.style.display='none'">🎨</div><div class="product-info"><h3>DIY Printing Kit</h3><p>Everything you need to try block printing at home. A wonderful gift for all ages.</p><div class="product-price">From £22</div><button class="enquire-btn" onclick="showPage('contact')">Enquire to Order</button></div></div>
+      <div class="product-card"><div class="product-img pi1"><img src="images/shop-scarf.jpg" alt="Block-printed scarf" onerror="this.style.display='none'">🧣</div><div class="product-info"><h3>Block-Printed Scarf</h3><p>Hand-printed on soft cotton with traditional floral motifs. Each one uniquely yours.</p><div class="product-price">From £35</div><button class="enquire-btn" onclick="showPage('contact')">Enquire to Order</button></div></div>
+      <div class="product-card"><div class="product-img pi2"><img src="images/shop-tote.jpg" alt="Printed tote bag" onerror="this.style.display='none'">🛍️</div><div class="product-info"><h3>Printed Tote Bag</h3><p>Sturdy cotton tote with bold block-print design. Perfect for everyday use or gifting.</p><div class="product-price">From £18</div><button class="enquire-btn" onclick="showPage('contact')">Enquire to Order</button></div></div>
+      <div class="product-card"><div class="product-img pi3"><img src="images/shop-cards.jpg" alt="Block-printed greeting cards" onerror="this.style.display='none'">🃏</div><div class="product-info"><h3>Greeting Cards</h3><p>Hand-printed cards for every occasion. Beautiful, tactile, and completely unique.</p><div class="product-price">From £4.50</div><button class="enquire-btn" onclick="showPage('contact')">Enquire to Order</button></div></div>
+      <div class="product-card"><div class="product-img pi4"><img src="images/shop-napkins.jpg" alt="Block-printed table napkins" onerror="this.style.display='none'">🍽️</div><div class="product-info"><h3>Table Napkins (Set of 4)</h3><p>Beautifully printed linen napkins. A simple way to bring craft into your home.</p><div class="product-price">From £28</div><button class="enquire-btn" onclick="showPage('contact')">Enquire to Order</button></div></div>
+      <div class="product-card"><div class="product-img pi5"><img src="images/shop-giftset.jpg" alt="Block-printed gift set" onerror="this.style.display='none'">📦</div><div class="product-info"><h3>Gift Set</h3><p>A curated box of printed goodies — perfect for birthdays, festivals, and special moments.</p><div class="product-price">From £45</div><button class="enquire-btn" onclick="showPage('contact')">Enquire to Order</button></div></div>
+      <div class="product-card"><div class="product-img pi6"><img src="images/shop-diykit.jpg" alt="DIY block printing kit" onerror="this.style.display='none'">🎨</div><div class="product-info"><h3>DIY Printing Kit</h3><p>Everything you need to try block printing at home. A wonderful gift for all ages.</p><div class="product-price">From £22</div><button class="enquire-btn" onclick="showPage('contact')">Enquire to Order</button></div></div>
     </div>
     <p style="text-align:center;margin-top:2rem;color:var(--text-muted);font-family:sans-serif;font-size:14px">All items are handmade to order. For custom commissions, <a style="color:var(--wood-mid);text-decoration:none;cursor:pointer" onclick="showPage('contact')">get in touch</a>.</p>
   </section>
@@ -403,12 +388,12 @@
   <section>
     <div class="section-title"><span class="orn">· · ✦ · ·</span><h2>Gallery</h2><div class="divider"><hr><span>✦</span><hr></div><p style="margin-top:0.75rem">A glimpse into the world of Anikara</p></div>
     <div class="gallery-grid">
-      <div class="gallery-item g1"><img src="gallery-blocks.jpg" alt="Hand-carved wooden printing blocks" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">🪵</span><span class="label">THE BLOCKS</span></div>
-      <div class="gallery-item g2"><img src="gallery-ink.jpg" alt="Block printing ink and dye" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">🎨</span><span class="label">THE INK</span></div>
-      <div class="gallery-item g3"><img src="gallery-craft.jpg" alt="Hands block printing fabric" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">👐</span><span class="label">THE CRAFT</span></div>
-      <div class="gallery-item g4"><img src="gallery-scarves.jpg" alt="Finished block-printed scarves" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">🧣</span><span class="label">SCARVES</span></div>
-      <div class="gallery-item g5"><img src="gallery-corporate.jpg" alt="Corporate team building block printing event" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">🏢</span><span class="label">CORPORATE</span></div>
-      <div class="gallery-item g6"><img src="gallery-weddings.jpg" alt="Wedding block printing favours" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">💒</span><span class="label">WEDDINGS</span></div>
+      <div class="gallery-item g1"><img src="images/gallery-blocks.jpg" alt="Hand-carved wooden printing blocks" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">🪵</span><span class="label">THE BLOCKS</span></div>
+      <div class="gallery-item g2"><img src="images/gallery-ink.jpg" alt="Block printing ink and dye" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">🎨</span><span class="label">THE INK</span></div>
+      <div class="gallery-item g3"><img src="images/gallery-craft.jpg" alt="Hands block printing fabric" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">👐</span><span class="label">THE CRAFT</span></div>
+      <div class="gallery-item g4"><img src="images/gallery-scarves.jpg" alt="Finished block-printed scarves" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">🧣</span><span class="label">SCARVES</span></div>
+      <div class="gallery-item g5"><img src="images/gallery-corporate.jpg" alt="Corporate team building block printing event" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">🏢</span><span class="label">CORPORATE</span></div>
+      <div class="gallery-item g6"><img src="images/gallery-weddings.jpg" alt="Wedding block printing favours" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">💒</span><span class="label">WEDDINGS</span></div>
     </div>
     <p style="text-align:center;margin-top:1.5rem;color:var(--text-muted);font-family:sans-serif;font-size:13px">More photos coming soon — follow along on Instagram for the latest from the workshop.</p>
   </section>
@@ -475,7 +460,6 @@
     btn.disabled = true;
     btn.textContent = 'SENDING...';
 
-    // Build the form data manually since inputs aren't wrapped in a <form> tag
     const data = new FormData();
     data.append('name', name);
     data.append('email', email);
