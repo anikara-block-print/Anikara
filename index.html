@@ -101,7 +101,9 @@
   .card-grid-5 .card-row2 { grid-column:span 1; }
   .card-grid-5-wrap { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
   .card-row2-wrap { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; max-width:66.66%; margin:0; }
+  .home-row2 { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:1.25rem; max-width:66.66%; margin-left:auto; margin-right:auto; }
   .event-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.25rem; align-items:stretch; }
+  .events-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; align-items:stretch; }
   .event-card { border-radius:4px; overflow:hidden; display:flex; flex-direction:column; height:100%; }
   .card { border-radius:4px; padding:2rem 1.5rem; text-align:center; background:var(--white); border:1px solid var(--ivory-dark); }
   .card-top { width:48px; height:48px; border-radius:50%; margin:0 auto 1rem; display:flex; align-items:center; justify-content:center; font-size:1.5rem; }
@@ -253,6 +255,10 @@
   @media (max-width:640px) {
     .about-grid, .contact-grid { grid-template-columns:1fr; }
     .gallery-grid { grid-template-columns:repeat(2,1fr); }
+    .events-grid { grid-template-columns:1fr; }
+    .home-row2 { grid-template-columns:1fr; max-width:100%; }
+    .eh { min-height:0; }
+    .eh h3 br { display:none; }
     .hero h1 { font-size:2rem; }
     .nav-toggle { display:block; }
     .nav-links {
@@ -267,6 +273,7 @@
     .nav-links.mobile-open { display:flex; }
     .nav-links button { text-align:left; padding:12px 0; width:100%; font-size:15px; }
     .nav-cta { display:none; }
+    .page { padding-bottom:70px; }
   }
 </style>
 </head>
@@ -318,7 +325,7 @@
       <div class="card"><div class="card-top ct-wood">💒</div><h3>Parties & Weddings</h3><p>Bespoke printing experiences and handcrafted favours that guests will treasure forever.</p></div>
       <div class="card"><div class="card-top ct-ivory">🎗️</div><h3>Charity Functions</h3><p>Engaging, memorable activities that bring people together for a good cause.</p></div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:1.25rem;max-width:66.66%;margin-left:auto;margin-right:auto">
+    <div class="home-row2">
       <div class="card"><div class="card-top ct-mid">🏫</div><h3>School Fairs</h3><p>Fun, family-friendly printing activities that children and parents love — perfect for fairs and fundraisers.</p></div>
       <div class="card"><div class="card-top" style="background:#d4ead4">♻️</div><h3>Recycle & Reprint</h3><p>Give your old clothes a new lease of life. Bring us your tired t-shirts, tote bags, or fabric pieces and we'll print on them with beautiful block designs — sustainable, personal, and unique.</p></div>
     </div>
@@ -382,7 +389,7 @@
 <div id="page-events" class="page">
   <section>
     <div class="section-title"><span class="orn">· · ✦ · ·</span><h2>Events & Workshops</h2><div class="divider"><hr><span>✦</span><hr></div><p style="margin-top:0.75rem">Unforgettable experiences for every occasion</p></div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:stretch">
+    <div class="events-grid">
       <div class="event-card">
         <div class="eh"><div class="icon">🏢</div><h3>Corporate Team Building</h3><div class="eh-tag">WORKSHOPS</div></div>
         <div class="eb"><p>A hands-on creative workshop that sparks collaboration and gives every team member something they've made together.</p><ul><li>Half-day or full-day formats</li><li>Groups from 10 to 100+</li><li>All materials provided</li><li>Take-home printed keepsakes</li><li>Can be themed to your brand</li></ul></div>
