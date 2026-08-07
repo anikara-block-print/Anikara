@@ -191,6 +191,15 @@
   .gallery-placeholder { background:var(--ivory-dark); border-radius:4px; padding:2rem; text-align:center; margin-bottom:1.5rem; border:1px solid #ddd0b8; }
   .gallery-placeholder p { color:var(--text-muted); font-family:sans-serif; font-size:14px; line-height:1.7; }
 
+  .gallery-back { background:none; border:none; color:var(--wood-mid); font-family:sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.5px; cursor:pointer; padding:0; margin-bottom:1.5rem; display:inline-flex; align-items:center; gap:6px; }
+  .gallery-back:hover { color:var(--wood); }
+  .subgallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+  .subgallery-item { position:relative; border-radius:4px; aspect-ratio:1; overflow:hidden; background:var(--ivory-dark); border:1px solid rgba(0,0,0,0.06); }
+  .subgallery-item img { width:100%; height:100%; object-fit:cover; display:block; }
+  @media (max-width:640px) {
+    .subgallery-grid { grid-template-columns:repeat(2,1fr); }
+  }
+
   .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
   .contact-info h3 { color:var(--navy); font-size:1.2rem; margin-bottom:1rem; }
   .contact-item { display:flex; gap:1rem; margin-bottom:1.25rem; }
@@ -416,14 +425,123 @@
   <section>
     <div class="section-title"><span class="orn">· · ✦ · ·</span><h2>Gallery</h2><div class="divider"><hr><span>✦</span><hr></div><p style="margin-top:0.75rem">A glimpse into the world of Anikara</p></div>
     <div class="gallery-grid">
-      <div class="gallery-item g1"><img src="gallery-blocks.jpg" alt="Hand-carved wooden printing blocks" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">🪵</span><span class="label">THE BLOCKS</span></div>
-      <div class="gallery-item g2"><img src="gallery-ink.jpg" alt="Block printing ink and dye" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">🎨</span><span class="label">THE INK</span></div>
-      <div class="gallery-item g3"><img src="gallery-craft.jpg" alt="Hands block printing fabric" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">👐</span><span class="label">THE CRAFT</span></div>
-      <div class="gallery-item g4"><img src="gallery-bespoke.jpg" alt="Bespoke block-printed pieces" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">🧣</span><span class="label">BESPOKE</span></div>
-      <div class="gallery-item g5"><img src="gallery-corporate.jpg" alt="Corporate team building block printing event" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">🏢</span><span class="label">CORPORATE</span></div>
-      <div class="gallery-item g6"><img src="gallery-weddings.jpg" alt="Wedding block printing favours" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">💒</span><span class="label">WEDDINGS</span></div>
+      <div class="gallery-item g1" onclick="openGallerySub('gallery-blocks')"><img src="gallery-blocks.jpg" alt="Hand-carved wooden printing blocks" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">🪵</span><span class="label">THE BLOCKS</span></div>
+      <div class="gallery-item g2" onclick="openGallerySub('gallery-ink')"><img src="gallery-ink.jpg" alt="Block printing ink and dye" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">🎨</span><span class="label">THE INK</span></div>
+      <div class="gallery-item g3" onclick="openGallerySub('gallery-craft')"><img src="gallery-craft.jpg" alt="Hands block printing fabric" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">👐</span><span class="label">THE CRAFT</span></div>
+      <div class="gallery-item g4" onclick="openGallerySub('gallery-bespoke')"><img src="gallery-bespoke.jpg" alt="Bespoke block-printed pieces" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">🧣</span><span class="label">BESPOKE</span></div>
+      <div class="gallery-item g5" onclick="openGallerySub('gallery-corporate')"><img src="gallery-corporate.jpg" alt="Corporate team building block printing event" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">🏢</span><span class="label">CORPORATE</span></div>
+      <div class="gallery-item g6" onclick="openGallerySub('gallery-weddings')"><img src="gallery-weddings.jpg" alt="Wedding block printing favours" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback-icon" style="display:none">💒</span><span class="label">WEDDINGS</span></div>
     </div>
-    <p style="text-align:center;margin-top:1.5rem;color:var(--text-muted);font-family:sans-serif;font-size:13px">More photos coming soon — follow along on Instagram for the latest from the workshop.</p>
+    <p style="text-align:center;margin-top:1.5rem;color:var(--text-muted);font-family:sans-serif;font-size:13px">Tap a category above to see more photos. Follow along on Instagram for the latest from the workshop.</p>
+  </section>
+</div>
+
+<!-- GALLERY SUB-PAGES -->
+<div id="page-gallery-blocks" class="page">
+  <section>
+    <button class="gallery-back" onclick="showPage('gallery')">← Back to Gallery</button>
+    <div class="section-title"><span class="orn">· · ✦ · ·</span><h2>The Blocks</h2><div class="divider"><hr><span>✦</span><hr></div><p style="margin-top:0.75rem">Hand-carved wooden printing blocks</p></div>
+    <div class="subgallery-grid">
+      <div class="subgallery-item"><img src="gallery-blocks-1.jpg" alt="The Blocks photo 1" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-blocks-2.jpg" alt="The Blocks photo 2" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-blocks-3.jpg" alt="The Blocks photo 3" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-blocks-4.jpg" alt="The Blocks photo 4" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-blocks-5.jpg" alt="The Blocks photo 5" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-blocks-6.jpg" alt="The Blocks photo 6" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-blocks-7.jpg" alt="The Blocks photo 7" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-blocks-8.jpg" alt="The Blocks photo 8" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-blocks-9.jpg" alt="The Blocks photo 9" onerror="this.parentElement.style.display='none'"></div>
+    </div>
+  </section>
+</div>
+
+<div id="page-gallery-ink" class="page">
+  <section>
+    <button class="gallery-back" onclick="showPage('gallery')">← Back to Gallery</button>
+    <div class="section-title"><span class="orn">· · ✦ · ·</span><h2>The Ink</h2><div class="divider"><hr><span>✦</span><hr></div><p style="margin-top:0.75rem">Natural, fabric-safe dyes applied by hand</p></div>
+    <div class="subgallery-grid">
+      <div class="subgallery-item"><img src="gallery-ink-1.jpg" alt="The Ink photo 1" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-ink-2.jpg" alt="The Ink photo 2" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-ink-3.jpg" alt="The Ink photo 3" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-ink-4.jpg" alt="The Ink photo 4" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-ink-5.jpg" alt="The Ink photo 5" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-ink-6.jpg" alt="The Ink photo 6" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-ink-7.jpg" alt="The Ink photo 7" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-ink-8.jpg" alt="The Ink photo 8" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-ink-9.jpg" alt="The Ink photo 9" onerror="this.parentElement.style.display='none'"></div>
+    </div>
+  </section>
+</div>
+
+<div id="page-gallery-craft" class="page">
+  <section>
+    <button class="gallery-back" onclick="showPage('gallery')">← Back to Gallery</button>
+    <div class="section-title"><span class="orn">· · ✦ · ·</span><h2>The Craft</h2><div class="divider"><hr><span>✦</span><hr></div><p style="margin-top:0.75rem">Hands at work, print by print</p></div>
+    <div class="subgallery-grid">
+      <div class="subgallery-item"><img src="gallery-craft-1.jpg" alt="The Craft photo 1" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-craft-2.jpg" alt="The Craft photo 2" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-craft-3.jpg" alt="The Craft photo 3" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-craft-4.jpg" alt="The Craft photo 4" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-craft-5.jpg" alt="The Craft photo 5" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-craft-6.jpg" alt="The Craft photo 6" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-craft-7.jpg" alt="The Craft photo 7" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-craft-8.jpg" alt="The Craft photo 8" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-craft-9.jpg" alt="The Craft photo 9" onerror="this.parentElement.style.display='none'"></div>
+    </div>
+  </section>
+</div>
+
+<div id="page-gallery-bespoke" class="page">
+  <section>
+    <button class="gallery-back" onclick="showPage('gallery')">← Back to Gallery</button>
+    <div class="section-title"><span class="orn">· · ✦ · ·</span><h2>Bespoke</h2><div class="divider"><hr><span>✦</span><hr></div><p style="margin-top:0.75rem">One-of-a-kind commissioned pieces</p></div>
+    <div class="subgallery-grid">
+      <div class="subgallery-item"><img src="gallery-bespoke-1.jpg" alt="Bespoke photo 1" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-bespoke-2.jpg" alt="Bespoke photo 2" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-bespoke-3.jpg" alt="Bespoke photo 3" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-bespoke-4.jpg" alt="Bespoke photo 4" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-bespoke-5.jpg" alt="Bespoke photo 5" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-bespoke-6.jpg" alt="Bespoke photo 6" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-bespoke-7.jpg" alt="Bespoke photo 7" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-bespoke-8.jpg" alt="Bespoke photo 8" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-bespoke-9.jpg" alt="Bespoke photo 9" onerror="this.parentElement.style.display='none'"></div>
+    </div>
+  </section>
+</div>
+
+<div id="page-gallery-corporate" class="page">
+  <section>
+    <button class="gallery-back" onclick="showPage('gallery')">← Back to Gallery</button>
+    <div class="section-title"><span class="orn">· · ✦ · ·</span><h2>Corporate</h2><div class="divider"><hr><span>✦</span><hr></div><p style="margin-top:0.75rem">Team building workshops in action</p></div>
+    <div class="subgallery-grid">
+      <div class="subgallery-item"><img src="gallery-corporate-1.jpg" alt="Corporate photo 1" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-corporate-2.jpg" alt="Corporate photo 2" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-corporate-3.jpg" alt="Corporate photo 3" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-corporate-4.jpg" alt="Corporate photo 4" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-corporate-5.jpg" alt="Corporate photo 5" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-corporate-6.jpg" alt="Corporate photo 6" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-corporate-7.jpg" alt="Corporate photo 7" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-corporate-8.jpg" alt="Corporate photo 8" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-corporate-9.jpg" alt="Corporate photo 9" onerror="this.parentElement.style.display='none'"></div>
+    </div>
+  </section>
+</div>
+
+<div id="page-gallery-weddings" class="page">
+  <section>
+    <button class="gallery-back" onclick="showPage('gallery')">← Back to Gallery</button>
+    <div class="section-title"><span class="orn">· · ✦ · ·</span><h2>Weddings</h2><div class="divider"><hr><span>✦</span><hr></div><p style="margin-top:0.75rem">Favours, stationery, and moments from the day</p></div>
+    <div class="subgallery-grid">
+      <div class="subgallery-item"><img src="gallery-weddings-1.jpg" alt="Weddings photo 1" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-weddings-2.jpg" alt="Weddings photo 2" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-weddings-3.jpg" alt="Weddings photo 3" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-weddings-4.jpg" alt="Weddings photo 4" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-weddings-5.jpg" alt="Weddings photo 5" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-weddings-6.jpg" alt="Weddings photo 6" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-weddings-7.jpg" alt="Weddings photo 7" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-weddings-8.jpg" alt="Weddings photo 8" onerror="this.parentElement.style.display='none'"></div>
+      <div class="subgallery-item"><img src="gallery-weddings-9.jpg" alt="Weddings photo 9" onerror="this.parentElement.style.display='none'"></div>
+    </div>
   </section>
 </div>
 
@@ -545,6 +663,11 @@
       });
     }
   })();
+  function openGallerySub(id) {
+    showPage(id);
+    const galleryNav = document.getElementById('nav-gallery');
+    if (galleryNav) galleryNav.classList.add('active');
+  }
   function toggleMobileNav() {
     document.getElementById('nav-links').classList.toggle('mobile-open');
   }
